@@ -1,7 +1,7 @@
 #!name=高德地图签到
 #!desc=自动签到 地图APP/微信小程序、支付宝小程序
 [Script]
-高德地图cookies获取=type=http-response,pattern=https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js,requires-body=ture,timeout=60
+高德地图cookies获取=type=http-response,pattern=https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=),requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js,requires-body=ture,timeout=60
 高德地图签到=type=cron,cronexp=1 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js
 [MITM]
 hostname= %APPEND% amap.com
